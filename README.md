@@ -34,3 +34,30 @@ Submission Guidelines:
 
 
 Note: Here is the official documentation for GitHub Actions: https://docs.github.com/en/actions/quickstartLinks to an external site.
+
+
+
+---
+
+## Continuous Integration & Testing Documentation
+
+This repository integrates **GitHub Actions** (`.github/workflows/ci.yml`) to automate code quality checks and testing on every `push` to `main`:
+
+1. **Automated Static Analysis (`pylint`):** Runs `pylint shopping_cart.py` to inspect code quality and style standards.
+2. **Automated Unit Testing (`unittest`):** Executes `python -m unittest test_shopping_cart.py` to verify shopping cart total calculations (standard items, empty cart, and string price inputs).
+
+### How to Run Locally
+
+- **Run unit tests:**
+  ```bash
+  python -m unittest test_shopping_cart.py
+  ```
+ - **Run static analysis:**
+  ```bash
+  pylint shopping_cart.py
+  ```
+
+
+
+
+
