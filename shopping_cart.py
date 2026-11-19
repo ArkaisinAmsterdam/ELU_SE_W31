@@ -1,22 +1,28 @@
-def CalculateTotal(cart):
-    total = 0
-    total_items = len(cart)
+def calculate_total(cart):
+    total = 0.0
     for item in cart:
-        total += item['price']
-    return total
+        total += float(item["price"])
+    return round(total, 2)
 
-def display_total(Total):
-    print("Total price: " + Total)
+
+def display_total(total):
+    print(f"Total price: {total}")
+
 
 CART = [
-    {'name': 'Item A', 'price': 10.99},
-    {'name': 'Item B', 'price': 5.99},
-    {'name': 'Item C', 'price': '8.49'}
+    {"name": "Item A", "price": 10.99},
+    {"name": "Item B", "price": 5.99},
+    {"name": "Item C", "price": 8.49},
 ]
 
-for item in CART:
-    print(f"Item: {item['name']} - Price: ${item['price']}")
 
-shopping_cart_total = CalculateTotal(CART)
-display_total(shopping_cart_total)
+def main():
+    for item in CART:
+        print(f"Item: {item['name']} - Price: ${item['price']}")
 
+    shopping_cart_total = calculate_total(CART)
+    display_total(shopping_cart_total)
+
+
+if __name__ == "__main__":
+    main()
